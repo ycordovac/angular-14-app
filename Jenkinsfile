@@ -1,9 +1,21 @@
 pipeline{
 
   agent {
-    node {
-      label 'node-nodejs'
-    }
+      kubernetes {
+        yaml '''
+        apiVersion: v1
+        kind: Pod
+        spec:
+        containers:
+        - name: shell
+          image: yandihlg/jenkins-nodo-nodejs-bootcamp:latest
+          command:
+          - sleep
+          args:
+          - infinity
+        '''
+        defaultContainer 'shell'
+      }
   }
 
   environment {

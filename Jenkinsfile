@@ -7,8 +7,8 @@ pipeline{
   }
 
   environment {
-    registryCredential='docker-hub-credentials'
-    registryFrontend = 'franaznarteralco/frontend-demo'
+    registryCredential='yandihlg'
+    registryFrontend = 'yandihlg/frontend-demo'
   }
 
   stages {
@@ -69,7 +69,7 @@ pipeline{
             sh 'rm -r configuracion'
           }
         }
-        sh 'git clone https://github.com/dberenguerdevcenter/kubernetes-helm-docker-config.git configuracion --branch test-implementation'
+        sh 'git clone https://github.com/ycordovac/kubernetes-helm-docker-config.git configuracion --branch test-implementation'
         sh 'kubectl apply -f configuracion/kubernetes-deployment/angular-14-app/manifest.yml -n default --kubeconfig=configuracion/kubernetes-config/config'
       }
 

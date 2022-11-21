@@ -29,7 +29,7 @@ spec:
   }
 
   environment {
-    registryCredential='docker-hub-credentials'
+    registryCredential='yandihlg'
     registryFrontend = 'yandihlg/angular-14-app'
   }
 
